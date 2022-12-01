@@ -54,16 +54,19 @@ class _TodoListPageState extends State<TodoListPage> {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            onPressed: (() {
-              if (textEditingController.text.isNotEmpty) {
-                setState(() {
-                  listaDeTarefas.add(textEditingController.text);
-                  textEditingController.clear();
-                });
-              }
-            }),
-            child: const Icon(Icons.add),
+          Container(
+            padding: const EdgeInsets.all(24),
+            child: FloatingActionButton(
+              onPressed: (() {
+                if (textEditingController.text.isNotEmpty) {
+                  setState(() {
+                    listaDeTarefas.add(textEditingController.text);
+                    textEditingController.clear();
+                  });
+                }
+              }),
+              child: const Icon(Icons.add),
+            ),
           ),
           FloatingActionButton(
             onPressed: (() => setState(
